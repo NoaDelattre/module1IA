@@ -6,10 +6,12 @@ iris = load_iris()
 X = iris.data               # 150 fleurs x 4 mesures
 y = iris.target             # 150 étiquettes (0, 1 ou 2)
 
-# 2. MODELE : un reseau avec UNE couche cachee de 10 neurones
-reseau = MLPClassifier(hidden_layer_sizes=(10,), max_iter=2000)
+# 2. MODELE : un reseau avec UNE couche cachee de 10 neurones (reseau = MLPClassifier(hidden_layer_sizes=(10,), max_iter=2000))
 
-# 3. ENTRAINEMENT : le reseau ajuste tous ses poids automatiquement
+# 2. MODELE : un reseau avec UNE couche cachee de 10 neurones
+reseau = MLPClassifier(hidden_layer_sizes=(150, 4), max_iter=2000)
+
+# 3. ENTRAINEMENT : le reseau ajuste tous ses poids automatiquement 
 reseau.fit(X, y)
 
 # 4. EVALUATION : quel pourcentage de fleurs bien classees ?
